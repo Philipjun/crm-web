@@ -1,9 +1,8 @@
-require_relative 'contact'
-require 'sinatra'
 
 require_relative 'rolodex'
 require_relative 'contact'
 require 'sinatra'
+@@rolodex = Rolodex.new
 
 get '/' do
   end
