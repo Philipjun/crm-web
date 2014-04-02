@@ -11,11 +11,23 @@ get "/" do
 end
 
 get '/contacts' do
-  puts params
+  erb :contacts
 end
 
-get '/contacts/new' do
-  erb :new_contact
+get '/contacts/:id/' do
+    @id = params [:id]
+    erb: id
+  end
+
+
+get '/contacts/id/edit' do
+  @@id = params [:id]
+  erb :edit_id
+end
+
+post 'contacts/:id/edit' do
+  @@id = params[:id]
+  erb :contacts
 end
 
 post '/contacts' do
