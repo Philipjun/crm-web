@@ -1,6 +1,10 @@
 require_relative 'contact'
 require 'sinatra'
 
+require_relative 'rolodex'
+require_relative 'contact'
+require 'sinatra'
+
 get '/' do
   end
 
@@ -12,3 +16,4 @@ get "/contacts" do
 
   erb :contacts
 end
+
