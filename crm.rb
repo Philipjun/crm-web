@@ -2,15 +2,16 @@
 require_relative 'rolodex'
 require_relative 'contact'
 require 'sinatra'
+
 @@rolodex = Rolodex.new
 
-get '/' do
-  end
+get "/" do
+  @crm_app_name = "My CRM"
+  erb :index
+end
 
-post '/contacts' do
-  new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
-  @@rolodex.add_contact(new_contact)
-  redirect to('/contacts')
+get '/contacts' do
+  puts params
 end
 
 get '/contacts/new' do
@@ -18,5 +19,8 @@ get '/contacts/new' do
 end
 
 post '/contacts' do
-  puts params
+  new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
+  @@rolodex.add_contact(new_contact)
+  redirect to('/contacts')
 end
+
