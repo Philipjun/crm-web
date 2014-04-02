@@ -4,4 +4,5 @@ class Contact
   end
 end
 
-@ontacts = []
+@contacts = []
+
