@@ -11,7 +11,7 @@ get "/" do
 end
 
 get '/contacts' do
-  erb :contacts
+  erb :new_contacts
 end
 
 get '/contacts/:id/' do
