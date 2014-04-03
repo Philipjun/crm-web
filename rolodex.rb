@@ -11,4 +11,4 @@ class Rolodex
     @contacts << contact
     @id += 1
   end
-end
+end   
