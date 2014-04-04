@@ -15,9 +15,10 @@ class Rolodex
  def find(contact_id)
     @contacts.find {|contact| contact.id == contact_id }
   end
-end
+
 
 def remove_contact(contact)
     @contacts.delete(contact)
   end
+  
 end

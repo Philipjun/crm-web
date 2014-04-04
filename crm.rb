@@ -1,4 +1,4 @@
-require_relative 'rolodex'
+require './rolodex'
 require 'sinatra'
 require 'data_mapper'
 
@@ -28,7 +28,6 @@ post '/contacts' do
 
   redirect to('/contacts')
 end
-
 
 
 get '/contacts/:id' do
@@ -76,7 +75,3 @@ delete "/contacts/:id" do
     raise Sinatra::NotFound
   end
 end
-
-
-
-
