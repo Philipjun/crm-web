@@ -1,6 +1,6 @@
 require_relative 'rolodex'
-require_relative 'contact'
 require 'sinatra'
+require 'data_mapper'
 
 @@rolodex = Rolodex.new
 
@@ -21,6 +21,7 @@ post '/contacts' do
   @@rolodex.add_contact(new_contact)
   redirect to('/contacts')
 end
+
 
 
 get '/contacts/:id' do
