@@ -2,10 +2,15 @@ class Contact
 
 @@counter = 1000
 
-	attr_accessor :note, :first_name, :id, :last_name, :email, 
+	attr_accessor :note, :first_name, :id, :last_name, :email
 	
 
-	def initialize
+	def initialize(first_name, last_name, email, note)
+		@first_name = first_name
+		@last_name = last_name
+		@email = email
+		@note = note
+
 		@id = Contact.get_id
 		end
 

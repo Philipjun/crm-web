@@ -1,8 +1,13 @@
 require './rolodex'
 require 'sinatra'
 require 'data_mapper'
+require './contact'
 
 @@rolodex = Rolodex.new
+
+@@rolodex.add_contact(Contact.new("Johnny", "Bravo", "Johnny@bitmakerlabs.com", "Rockstar"))
+contact = @@rolodex.find(1000)
+puts contact.inspect
 
 get '/' do
   erb :index
@@ -27,6 +32,11 @@ post '/contacts' do
     )
 
   redirect to('/contacts')
+end
+
+get '/contacts/:id' do
+  @contact = @@rolodex.find(params[:id].to_i)
+  erb :show_contact
 end
 
 
