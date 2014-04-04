@@ -73,7 +73,7 @@ end
 
 delete "/contacts/:id" do
   @contact = @@rolodex.find(params[:id].to_i)
-  if contact
+  if @contact
     @@rolodex.remove_contact(@contact)
     redirect to("/contacts")
   else
