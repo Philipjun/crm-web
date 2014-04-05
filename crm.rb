@@ -5,7 +5,6 @@ require './contact'
 
 @@rolodex = Rolodex.new
 
-@@rolodex.add_contact(Contact.new("Johnny", "Bravo", "Johnny@bitmakerlabs.com", "Rockstar"))
 contact = @@rolodex.find(1000)
 puts contact.inspect
 
