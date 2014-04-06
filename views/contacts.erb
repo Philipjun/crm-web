@@ -2,13 +2,6 @@
 
 <ul>
   <% @contacts.each do |contact| %>
-    <a href="contacts/<%= contact.id %>" >
-    <li><%= contact.first_name %> <%= contact.last_name %></li></a>
-    <li><strong>ID: </strong> <%= contact.id %></li>
-    <li><strong>Email: </strong> <%= contact.email %></li>
-    <li><strong>Date Created: </strong> <%= contact.date %></li>
-    <li><strong>Note: </strong></li>
-    <li><%= contact.note %></li>
-    <li>--------------------</li>
+    <li><a href="/contacts/<%= contact.id %>"><%= contact.first_name %> <%= contact.last_name %></a></li>
   <% end %>
 </ul>

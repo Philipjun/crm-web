@@ -24,7 +24,7 @@ end
 
 get '/contacts' do
   @contacts = Contact.all
-  erb :show_contact
+  erb :contacts
 end
 
 get '/contacts/new' do 
@@ -32,7 +32,7 @@ get '/contacts/new' do
 end
 
 post '/contacts' do
-  @contact = Contact.create(
+  contact = Contact.create(
     :first_name => params[:first_name],
     :last_name => params[:last_name],
     :email => params[:email],
