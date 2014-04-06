@@ -4,7 +4,6 @@ require 'data_mapper'
 
 DataMapper.setup(:detfault, "sqlite3:database.sqlite3")
 
-puts contact.inspect
 
 get '/' do
   erb :index
