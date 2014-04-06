@@ -22,16 +22,16 @@ get '/' do
   erb :index
 end
 
-get "/contacts" do
+get '/contacts' do
   @contacts = Contact.all
-  erb :contacts
+  erb :show_contact
 end
 
 get '/contacts/new' do 
   erb :new_contact
 end
 
-post "/contacts" do
+post '/contacts' do
   @contact = Contact.create(
     :first_name => params[:first_name],
     :last_name => params[:last_name],
@@ -50,7 +50,9 @@ get "/contacts/:id" do
   end
 end
 
-
+post '/contacts/edit' do
+  redirect to ("contacts/#{params[:id].to_i}/edit")
+end
 
 
 get "/contacts/:id/edit" do 

@@ -1,11 +1,42 @@
 <h1 class="main_text">Create new contact</h1>
 
-<div class="form_container">
-    <form action="/contacts" method="POST">
-        First Name <input type="text" name="first_name"></br>
-      Last Name <input type="text" name="last_name"></br>
-      Email <input type="text" name="email"></br>
-      Note <input type="text" name="note"></br>
-      <input type="submit" name="Submit">
-    </form>
-</div>
+
+<form action="/contacts" method="POST" class="basic_box">
+  <fieldset>
+    <div class="legend">
+      <legend>New Contact</legend>
+    </div>
+
+    <div id="first_name">
+      <label for="first_name">First Name: </label>
+      <br>
+      <input type="text" name="first_name" id="first_name" required="required" placeholder="First Name"/>
+    </div>
+
+    <div id="last_name">
+      <label for="last_name">Last Name: </label>
+      <br>
+      <input type="text" name="last_name" id="last_name" required="required" placeholder="Last Name"/>
+    </div>
+
+    <div id="email">
+      <label for="email">Email: </label>
+      <br>
+      <input type="text" name="email" id="email" required="required" placeholder="Email"/>
+    </div>    
+
+    <div id="notes">
+      <label for="notes">Notes: </label>
+      <br>
+      <textarea name="notes" id="notes" placeholder="Add notes about contact"></textarea>
+    </div>
+
+    <div id="new_contact_btns">
+      <input type="submit" name="submit" value="Add Contact"/>
+      <a href="/">
+        <input type="button" name="cancel" value="Cancel"/>
+      </a>
+      <!-- Link 'Cancel' back to index.erb -->
+    </div>
+  </fieldset>
+</form>

@@ -1,13 +1,51 @@
 <h1><%= @contact.first_name %> <%= @contact.last_name %></h1>
-<p><strong>Email:</strong> <%= @contact.email %></p>
-<p><strong>Note:</strong></p>
-<p><%= @contact.note %></p>
 
-<form action="/contacts/<%= @contact.id %>/edit" method="GET">
-  <input type="submit" name="Edit Contact" value="EDIT">
-</form>
+<div class="scrolling_box">
+  <% @contacts.each do |contact| %>
 
-<form action="/contacts/<%= @contact.id %>" method="POST">
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" name="Delete Contact" value="DELETE">
-</form>
+  <form class="basic_box">
+      <fieldset>
+        
+        <div class="show_legend">
+          <legend>ID: <%= contact.id %></legend>
+        </div>
+
+        <div id="first_name">
+          <label for="first_name">First Name: </label>
+          <br>
+          <p id="show_first_name_input"><%= contact.first_name %></p>
+        </div>
+
+        <div id="last_name">
+          <label for="last_name">Last Name: </label>
+          <br>
+          <p id="show_last_name_input"><%= contact.last_name %></p>
+        </div>
+
+        <div id="email">
+          <label for="email">Email: </label>
+          <br>
+          <p id="show_email_input"><%= contact.email %></p>
+        </div>    
+
+        <div id="notes">
+          <label for="notes">Notes: </label>
+          <br>
+          <p id="show_notes_input"><%= contact.notes %></p>
+        </div>
+
+        <div id="created_at">
+          <label for="email">Created: </label>
+          <br>
+          <p id="created_at_input"><%= contact.created_at %></p>
+        </div> 
+
+      </fieldset>
+    </form>
+
+  <% end %> 
+</div>
+
+<div class="scroll_btn">
+  <input type="button" class="show_scroll_btn" name="scroll button" value="scroll down to view more contacts">
+</div>
