@@ -1,22 +1,11 @@
 <h1 class="main_text">Create new contact</h1>
 
-<div class="container">
-  <form class="/contacts" action="/contacts" method="POST">
-    <legend>Contact Info</legend>
-
-    <label for="First name">First Name: </label>
-    <input type="text" name="first_name" id="first_name" required="required placeholder="First Name" />
-
-    <label for="Last name">Last Name: </label>
-    <input type="text" name="last_name" id="last_name" required="required placeholder="Last Name"/>
-
-    <label for="Email">Email: </label>
-    <input type="text" name="Email" id="email" required="required placeholder="Email"/>
-
-    <label for = "note">note: </label>
-    <input type="text" name="note" id="note" required="required placeholder="note"/>
-
-    <input type="submit" name="Submit">
-
-  </form>
+<div class="form_container">
+    <form action="/contacts" method="POST">
+        First Name <input type="text" name="first_name"></br>
+      Last Name <input type="text" name="last_name"></br>
+      Email <input type="text" name="email"></br>
+      Note <input type="text" name="note"></br>
+      <input type="submit" name="Submit">
+    </form>
 </div>
