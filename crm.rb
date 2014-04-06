@@ -15,6 +15,9 @@ class Contact
   property :note, String
 end
 
+DataMapper.finalize
+DataMapper.auto_upgrade!
+
 get '/' do
   erb :index
 end
