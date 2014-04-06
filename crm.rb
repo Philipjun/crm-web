@@ -50,10 +50,6 @@ get "/contacts/:id" do
   end
 end
 
-post '/contacts/edit' do
-  redirect to ("contacts/#{params[:id].to_i}/edit")
-end
-
 
 get "/contacts/:id/edit" do 
   @contact =Contact.get(params[:id].to_i)
