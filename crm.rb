@@ -1,11 +1,9 @@
-require './rolodex'
+
 require 'sinatra'
 require 'data_mapper'
-require './contact'
 
-@@rolodex = Rolodex.new
+DataMapper.setup(:detfault, "sqlite3:database.sqlite3")
 
-contact = @@rolodex.find(1000)
 puts contact.inspect
 
 get '/' do
@@ -20,7 +18,7 @@ get '/contacts/new' do
   erb :new_contact
 end
 
-post '/contacts' do
+post '/®s' do
   #new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note], params[:date])
   #@@rolodex.add_contact(new_contact)
   @contact = Contact.create(

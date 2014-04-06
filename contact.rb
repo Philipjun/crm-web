@@ -25,3 +25,9 @@ def to_s
 	end
 
 end
+
+post "/contacts" do
+	puts params
+	new_contact = Contact.new(params[:first_name])
+	@contacts << new_contact
+end
