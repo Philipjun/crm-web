@@ -9,6 +9,11 @@
   <input type="text" name="email" value="<%= @contact.email %>">
   <input type="text" name="note" value="<%= @contact.note %>">
   <input type="submit" name="Submit">
-  <input type="destroy" name="Delete" value="<%= @contact.destroy %>">
+
 </form>
 
+<form action="/contacts/<%= @contact.id %>" method="post">
+<input type="hidden" name="_method" value="delete">
+<input type="submit" name="Submit" value="Delete">
+
+</form>
