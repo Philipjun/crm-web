@@ -29,8 +29,14 @@ get '/contacts/new' do
   erb :new_contact
 end
 
-
 get "/contacts/:id" do
+@contact = Contact.get(params[:id])
+erb :edit_contact
+end
+
+
+
+get "/contacts/edit_contact" do
   @contact = Contact.get(params[:id].to_i)
   if @contact
     erb :show_contact
@@ -40,7 +46,9 @@ get "/contacts/:id" do
 end
 
 
-get "/contacts/edit" do 
+
+
+get "/contacts/:id/edit" do 
   @contact =Contact.get(params[:id].to_i)
   if @contact
   erb :edit_contact

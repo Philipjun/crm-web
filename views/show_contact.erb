@@ -8,10 +8,13 @@
 
 
  
+    <form action="/contacts/ <%=@contact.id %>" method="GET">
+      <input type="submit" name="Edit Contact" value="EDIT">
+    </form>
+
     <form action="/contacts/ <%=@contact.id %>" method="POST">
       <input type="hidden" name="_method value="put">
       <input type="submit" name="Delete Contact" value="DELETE">
-
     </form>
 
   <% end %> 
