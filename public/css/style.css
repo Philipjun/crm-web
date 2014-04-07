@@ -3,7 +3,6 @@
 background-image:url('background.jpg');
 background-color: white;
 background-repeat: no-repeat;
-background-position: center top;
 font-family: Helvetica;
 color: white;
 }
@@ -14,4 +13,9 @@ color: white;
 
 .t1 {
   font-size: 30px;
+  position: center;
+}
+
+.box {
+  font-size: 40px;
 }

@@ -40,7 +40,7 @@ get "/contacts/:id" do
 end
 
 
-get "/contacts/:id/edit" do 
+get "/contacts/edit" do 
   @contact =Contact.get(params[:id].to_i)
   if @contact
   erb :edit_contact
