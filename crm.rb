@@ -1,5 +1,3 @@
-
-
 require 'sinatra'
 require 'data_mapper'
 
@@ -31,15 +29,6 @@ get '/contacts/new' do
   erb :new_contact
 end
 
-post '/contacts' do
-  contact = Contact.create(
-    :first_name => params[:first_name],
-    :last_name => params[:last_name],
-    :email => params[:email],
-    :note => params[:note]
-  )
-  redirect to('/contacts')
-end
 
 get "/contacts/:id" do
   @contact = Contact.get(params[:id].to_i)
@@ -60,19 +49,14 @@ else
   end
 end
 
-
-put "/contacts/:id" do
-  @contact = Contact.get(params[:id].to_i)
-  if @contact
-    @contact.update(:first_name => params[:first_name])
-    @contact.update(:last_name => params[:last_name])
-    @contact.update(:email => params[:email])
-    @contact.update(:note => params[:note])
-
-    redirect to("/contacts")
-  else
-    raise Sinatra::NotFound
-  end
+post '/contacts' do
+  contact = Contact.create(
+    :first_name => params[:first_name],
+    :last_name => params[:last_name],
+    :email => params[:email],
+    :note => params[:note]
+  )
+  redirect to('/contacts')
 end
 
 delete "/contacts/:id" do
@@ -84,3 +68,20 @@ delete "/contacts/:id" do
     raise Sinatra::NotFound
   end
 end
+
+put "/contacts/:id" do
+  @contact = Contact.get(params[:id].to_i)
+  if @contact
+    Contact.update(
+      :first_name => params[:first_name],
+      :last_name => params[:last_name],
+      :email => params[:email],
+      :note => params[:note]
+      )
+    redirect to("/contacts")
+  else
+    raise Sinatra::NotFound
+  end
+end
+
+
